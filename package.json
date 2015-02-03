@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/HumpbackSeahorses/HumpbackSeahorses.git"
+    "url": "https://github.com/oceanshells/HumpbackSeahorses.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/HumpbackSeahorses/HumpbackSeahorses/issues"
+    "url": "https://github.com/oceanshells/HumpbackSeahorses/issues"
   },
-  "homepage": "https://github.com/HumpbackSeahorses/HumpbackSeahorses",
+  "homepage": "https://github.com/oceanshells/HumpbackSeahorses",
   "devDependencies": {
     "browserify": "^8.1.1",
     "chai": "^1.10.0",
