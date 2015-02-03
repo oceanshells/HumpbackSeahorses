@@ -3,15 +3,15 @@
 ## General Workflow
 
 1. Fork the repo
-1. Cut a namespaced feature branch from master
-  - bug/...
-  - feat/...
-  - test/...
-  - doc/...
-  - refactor/...
+1. Cut a namespaced feature branch with initials from master
+  - GW_bug/...
+  - TJ_feat/...
+  - AL_test/...
+  - BO_doc/...
+  - JK_refactor/...
 1. Make commits to your feature branch. Prefix each commit like so:
-  - (feat) Added a new feature
-  - (fix) Fixed inconsistent tests [Fixes #0]
+  - (feat) Add a new feature
+  - (fix) Fix inconsistent tests [Fixes #0]
   - (refactor) ...
   - (cleanup) ...
   - (test) ...
@@ -70,8 +70,9 @@ changes.
 
 #### Commit Message Guidelines
 
-- Commit messages should be written in the present tense; e.g. "Fix continuous
-  integration script".
+- Commit message starts with a capital letter
+- Commit message in present tense
+- Commit message does not in a '.'
 - The first line of your commit message should be a brief summary of what the
   commit changes. Aim for about 70 characters max. Remember: This is a summary,
   not a detailed description of everything that changed.
@@ -87,7 +88,11 @@ changes to the master branch into yours by running this command
 from your branch:
 
 ```bash
-git pull --rebase upstream master
+git fetch upstream master
+```
+
+```bash
+git rebase upstream/master
 ```
 
 This will start the rebase process. You must commit all of your changes
