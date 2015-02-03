@@ -1,0 +1,10 @@
+.message-display {
+  padding: 5px;
+}
+
+.message-display img {
+  vertical-align: middle;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+}
