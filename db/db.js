@@ -1,10 +1,12 @@
 var mongoose = require('mongoose');
-var config = {};
-if (!process.env.MONGODB_URI){
-  config = require('../server/config.js');
+var config = require('../server/config.js');
+
+var dbPath = config.localDevDb;
+
+if(process.env.NODE_ENV === 'production'){
+  dbPath = config.remoteProdDb;
 }
 
-var dbPath = process.env.MONGODB_URI || config.localDevPath;
 mongoose.connect(dbPath);
 
 var db = mongoose.connection;

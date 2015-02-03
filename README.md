@@ -47,13 +47,14 @@ bower install
 
 3. Create a config.js file in /server/ with the following contents:
 
-  ```sh
-  var config = {};
-  config.client_id = "FILL ME IN";
-  config.client_secret = "FILL ME IN";
-  config.localDevPath = 'mongodb://localhost:27017/linguist';
-  module.exports = config;
-  ```
+```sh
+var config = {};
+config.client_id = "FILL_ME_IN";
+config.client_secret = "FILL_ME_IN";
+config.localDevDb = 'mongodb://localhost:27017/linguist';
+config.remoteProdDb = 'FILL_ME_IN';
+module.exports = config;
+```
 
 ### Tasks
 
@@ -70,9 +71,9 @@ gulp test-client - Client Test
 View the project roadmap [here](https://github.com/HumpbackSeahorses/HumpbackSeahorses/issues)
 
 ## Team
-  - __Product Owner__: Jared Noble
-  - __Scrum Master__: Dave Fedele
-  - __Development Team Members__: Tyler Davis, Ryan Leung
+  - __Product Owners__: Jared Noble, Clark Feusier
+  - __Scrum Masters__: Dave Fedele, Eric Kennedy
+  - __Development Team Members__: Tyler Davis, Ryan Leung, Omar Alvarez
 
 ## Contributing
 
