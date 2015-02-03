@@ -32,6 +32,9 @@ bower_components
 # config files
 server/config.js
 
+# azure configs
+iisnode.yml
+
 # Floobits
 .floo
 .flooignore
