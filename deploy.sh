@@ -130,7 +130,7 @@ fi
 # 5. Run ulp
 if [ -e "$DEPLOYMENT_TARGET/gulpfile.js" ]; then
   cd "$DEPLOYMENT_TARGET"
-  ./node_modules/.bin/gulp --no-color scripts
+  ./node_modules/gulp/bin/gulp.js scripts
   exitWithMessageOnError "gulp failed"
   cd - > /dev/null
 fi
