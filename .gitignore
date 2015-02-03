@@ -35,6 +35,9 @@ server/config.js
 # azure configs
 iisnode.yml
 
+# webstorm config
+.idea
+
 # Floobits
 .floo
 .flooignore
