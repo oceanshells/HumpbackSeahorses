@@ -51,5 +51,6 @@ var MessagesView = Backbone.View.extend({
       var userView = new UserView({model: message});
       $("#currentUsersView").append(userView.render());
     }
+  }
 
 });
