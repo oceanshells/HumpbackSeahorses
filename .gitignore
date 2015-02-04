@@ -31,6 +31,9 @@ bower_components
 # config files
 server/config.js
 
+# Emojis
+public/client/img/emojis/*.png
+
 # azure configs
 iisnode.yml
 
