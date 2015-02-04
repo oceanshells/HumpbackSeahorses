@@ -70,6 +70,6 @@ gulp.task('test-client', function() {
 });
 
 gulp.task('seed:emojis', function(){
-  return gulp.src('./server/workers/emojis/emojiWorker.js', {read: false})
+  return gulp.src('./server/workers/emojis/emojiWorkerSeedData.js', {read: false})
     .pipe(shell(['node <%=  file.path %>']));
 });
