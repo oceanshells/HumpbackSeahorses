@@ -33,17 +33,18 @@ var MessagesView = Backbone.View.extend({
   },
 
   renderUsername: function(message) {
-    if (!this.currentRoom || this.currentRoom === message.attributes.room) {
-      if (!this.existingUsernames[message.attributes.username]) {
-        this.existingUsernames[message.attributes.username] = true;
-        this.currentRoom = message.attributes.room
+    var messageAttributes = message.attributes;
+    if (!this.currentRoom || this.currentRoom === messageAttributes.room) {
+      if (!this.existingUsernames[messageAttributes.username]) {
+        this.existingUsernames[messageAttributes.username] = true;
+        this.currentRoom = messageAttributes.room
         var userView = new UserView({model: message});
         $("#currentUsersView").append(userView.render());
       }
     } else {
-      $("#userBox").text("Current users in:  " + message.attributes.room);
-      this.currentRoom = message.attributes.room;
-      this.existingUsernames[message.attributes.username] = true;
+      $("#userBox").text("Current users in:  " + messageAttributes.room);
+      this.currentRoom = messageAttributes.room;
+      this.existingUsernames[messageAttributes.username] = true;
       var children = $("#currentUsersView").children();
       for (var i = 0; i < children.length; i++){
         children[i].remove();
