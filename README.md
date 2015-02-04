@@ -69,7 +69,7 @@ module.exports = config;
 1. `gulp scripts` - Builds public scripts for deployment, placing result in /public/dist
 1. `gulp test-server` - Runs server tests
 1. `gulp test-client` - Runs client tests
-1. `gulp seed:emojis` - Seeds database with emojis from GitHub's API
+1. `gulp seed:emojis` - Seeds database with emojis from GitHub's API, and seed `img/emojis/` with PNG emoji files
 
 ## Deployment
 
