@@ -15,8 +15,8 @@ gulp.task('scripts', function(){
                    './bower_components/underscore/underscore.js',
                    './bower_components/backbone/backbone.js',
                    './node_modules/socket.io-client/socket.io.js',
-                   './public/client/app.js',
-                   './public/client/**/*.js'])
+                   './public/client/**/*.js',
+                   './public/client/app.js'])
           .pipe(concat('scripts.js'))
           .pipe(rename('scripts.min.js'))
           .pipe(uglify())
