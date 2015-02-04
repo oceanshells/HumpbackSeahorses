@@ -1,0 +1,24 @@
+.message-display {
+  padding: 5px;
+}
+
+.message-display img {
+  vertical-align: middle;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+}
+
+.thumb > input{ /* HIDE RADIO */
+  visibility: hidden; /* Makes input not-clickable */
+  position: absolute; /* Remove input from document flow */
+}
+.thumb > input + img{ /* IMAGE STYLES */
+  cursor:pointer;
+  border:2px solid transparent;
+  width: 28px;
+  height: 28px;
+}
+.thumb > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
+  border:2px solid #f00;
+}

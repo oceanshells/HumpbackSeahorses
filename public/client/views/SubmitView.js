@@ -26,7 +26,8 @@ var SubmitView = Backbone.View.extend({
       text: $('#chatInput').val(),
       lang: $('#lang').val(),
       username: $('#username').val(),
-      room: $('#room').val()
+      room: $('#room').val(),
+      avatar: $('input[name=avatar]:checked', '#userDetailsView').val() 
     };
     socket.emit('chat message', message);
     $('#chatInput').val('');

@@ -27,7 +27,7 @@ gulp.task('scripts', function(){
 });
 
 gulp.task('images', function () {
-    return gulp.src('./public/client/img/*')
+    return gulp.src('./public/client/img/**/*')
         .pipe(imagemin({
             progressive: true,
             svgoPlugins: [{removeViewBox: false}],
