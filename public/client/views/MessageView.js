@@ -3,7 +3,7 @@ var MessageView = Backbone.View.extend({
   template : _.template(
     '<div class="message-display">'+
       '<span>'+
-        '<img src="client/css/images/avatars/<%- avatar %>.png">'+ 
+        '<img src="client/images/avatars/<%- avatar %>.png">'+ 
         '<strong><%- username %></strong>@<%- room %> - <%- text %>'+
       '</span>'+
     '</div>'

@@ -8,7 +8,7 @@ var AvatarSelectView = Backbone.View.extend({
 
   template: _.template('<label class="thumb">'+
                         '<input type="radio" name="avatar" value="<%=val%>">'+
-                        '<img src="client/css/images/avatars/<%=val%>.png" />'+
+                        '<img src="client/images/avatars/<%=val%>.png" />'+
                        '</label>'
                        ),
 
