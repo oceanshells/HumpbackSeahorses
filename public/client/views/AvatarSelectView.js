@@ -1,11 +1,14 @@
-var avatars = ['A01', 'A02', 'A03', 'A04', 'A05'];
+var avatars = [
+  {val: 'A01'}, {val: 'A02'}, {val: 'A03'}, {val: 'A04'}, {val: 'A05'}, {val: 'B01'},
+  {val: 'FA01'}, {val: 'FA02'}, {val: 'FA03'}, {val: 'FA04'}, {val: 'FA05'}, {val: 'FC01'}
+];
 
 var AvatarSelectView = Backbone.View.extend({
   id: 'avatars',
 
   template: _.template('<label class="thumb">'+
-                        '<input type="radio" name="avatar" value="">'+
-                        '<img src="client/css/images/avatars/A01.png" />'+
+                        '<input type="radio" name="avatar" value="<%=val%>">'+
+                        '<img src="client/css/images/avatars/<%=val%>.png" />'+
                        '</label>'
                        ),
 
