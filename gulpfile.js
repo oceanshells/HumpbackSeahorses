@@ -69,7 +69,14 @@ gulp.task('test-client', function() {
     })).on('error', function(err){ throw err; });
 });
 
-gulp.task('seed:emojis', function(){
-  return gulp.src('./server/workers/emojis/emojiWorker.js', {read: false})
+gulp.task('emojis:fetch', function(){
+  return gulp.src('./server/workers/emojis/emojiWorkerSeedData.js', {read: false})
     .pipe(shell(['node <%=  file.path %>']));
 });
+
+gulp.task('emojis:download', ['emojis:fetch'], function(){
+  return gulp.src('./server/workers/emojis/emojiWorkerStoreEmojisLocal.js', {read: false})
+    .pipe(shell(['node <%=  file.path %>']));
+});
+
+gulp.task('seed:emojis', ['emojis:fetch', 'emojis:download']);
