@@ -51,11 +51,15 @@ bower install
 5. Create a config.js file in /server/ with the following contents:
 
 ```sh
-var config = {};
-config.client_id = "FILL_ME_IN";
-config.client_secret = "FILL_ME_IN";
-config.localDevDb = 'mongodb://localhost:27017/linguist';
-config.remoteProdDb = 'FILL_ME_IN';
+var config = {
+  client_id: "FILL_ME_IN",
+  client_secret: "FILL_ME_IN",
+  localDevDb: 'mongodb://localhost:27017/linguist',
+  remoteProdDb: 'FILL_ME_IN',
+  apiAdminSecret: 'FILL_ME_IN', // make up a random string
+  productionUrl: FILL_ME_IN', // should match your deployed app
+  devUrl: 'http://localhost:3000/'
+};
 module.exports = config;
 ```
 
@@ -65,6 +69,7 @@ module.exports = config;
 1. `gulp scripts` - Builds public scripts for deployment, placing result in /public/dist
 1. `gulp test-server` - Runs server tests
 1. `gulp test-client` - Runs client tests
+1. `gulp seed:emojis` - Seeds database with emojis from GitHub's API
 
 ## Deployment
 
