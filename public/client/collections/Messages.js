@@ -10,6 +10,7 @@ var Messages = Backbone.Collection.extend({
       text: msg.text,
       lang: msg.lang,
       room: msg.room,
+      avatar: msg.avatar,
       translations: msg.translations
     }));
   }
