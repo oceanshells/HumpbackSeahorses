@@ -8,6 +8,7 @@ var karma = require('gulp-karma');
 var mocha = require('gulp-mocha');
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
+var shell = require('gulp-shell');
 
 var publicDir = 'public/**/*.js';
 
@@ -47,9 +48,7 @@ gulp.task('develop', function(){
     script: './server.js',
     env: { 'NODE_ENV': 'development' },
     ignore: ['public/dist/']
-  })
-  //have nodemon run watch on start
-  .on('start', ['watch-public']);
+  }).on('start', ['watch-public']);
 });
 
 gulp.task('default', ['develop']);
@@ -59,18 +58,18 @@ gulp.task('test-server', function(){
     .pipe(mocha({reporter: 'nyan'}));
 });
 
-var testFiles = ['./test/client/unit.js',
-  './test/client/integration.js'];
+var testFiles = ['./test/client/unit.js', './test/client/integration.js'];
 
 gulp.task('test-client', function() {
-
   return gulp.src(testFiles)
     .pipe(karma({
       configFile: 'karma.conf.js',
       reporters: ['progress', 'coverage'],
       action: 'run'
-    }))
-    .on('error', function(err) {
-      throw err;
-    });
+    })).on('error', function(err){ throw err; });
+});
+
+gulp.task('seed:emojis', function(){
+  return gulp.src('./server/workers/emojis/emojiWorker.js', {read: false})
+    .pipe(shell(['node <%=  file.path %>']));
 });

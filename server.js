@@ -1,14 +1,33 @@
 var port = process.env.PORT || 3000;
 var express = require("express");
 var app = express();
-var http = require("http").Server(app);
-var io = require('socket.io')(http);
+var morgan = require('morgan');
 var path = require('path');
+var bodyParser = require('body-parser');
+var helpers = require('./server/helpers.js');
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
 var db = require('./db/db.js');
+var indexDir = path.resolve(__dirname + '/public');
+var emojiRouter = express.Router();
 
-var indexPage = path.resolve(__dirname + '/public');
+// General configs
+app.use(morgan('dev'));
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 
-app.use(express.static(indexPage));
+// Serves client-app
+app.use(express.static(indexDir));
+
+// API router registrations
+app.use('/api/emojis', emojiRouter);
+
+// Inject routers into respective route files
+require('./server/routers/emojiRoutes.js')(emojiRouter);
+
+// API error handling
+app.use(helpers.errorLogger);
+app.use(helpers.errorHandler);
 
 var chatter = require('./server/ChatHandler.js');
 
