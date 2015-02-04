@@ -1,12 +1,12 @@
 //returns rendered template
 var MessageView = Backbone.View.extend({
   template : _.template(
-    '<div class="message-display"> \
-      <span> \
-        <img src="http://api.randomuser.me/portraits/med/men/4.jpg"> \
-        <strong><%- username %></strong>@<%- room %> - <%- text %> \
-      </span> \
-    </div>'
+    '<div class="message-display">'+
+      '<span>'+
+        '<img src="client/css/images/avatars/<%=avatar%>.png">'+ 
+        '<strong><%- username %></strong>@<%- room %> - <%- text %>'+
+      '</span>'+
+    '</div>'
     ),
 
   render:function(){

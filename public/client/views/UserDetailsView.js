@@ -1,5 +1,8 @@
 var UserDetailsView = Backbone.View.extend({
-  template: _.template('<input type="text" class="text" id="username" placeholder="username" autocomplete="off"/>'),
+  template: _.template('Username'+
+                       '<input type="text" class="text" id="username" placeholder="username" autocomplete="off"/>'+
+                       'Avatar'
+                       ),
 
   initialize: function() {
     this.render();
