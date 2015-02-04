@@ -57,7 +57,7 @@ var config = {
   localDevDb: 'mongodb://localhost:27017/linguist',
   remoteProdDb: 'FILL_ME_IN',
   apiAdminSecret: 'FILL_ME_IN', // make up a random string
-  productionUrl: FILL_ME_IN', // should match your deployed app
+  productionUrl: 'FILL_ME_IN', // should match your deployed app
   devUrl: 'http://localhost:3000/'
 };
 module.exports = config;
