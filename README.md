@@ -1,7 +1,6 @@
-# Linguist
+# Linguist v2
 
-> Linguist allows you to talk to people around the world in different languages by translating your messages automatically for you.
-
+Linguist allows you to talk to people around the world in different languages by translating your messages automatically for you.
 
 ## Table of Contents
 
@@ -10,18 +9,18 @@
 1. [Development](#development)
     1. [Installing Dependencies](#installing-dependencies)
     1. [Tasks](#tasks)
+1. [Deployment](#deployment)
 1. [Team](#team)
 1. [Contributing](#contributing)
 
 ## Usage
 
-> You can try linguist out here: http://linguist.azurewebsites.net.
+> You can try **Linguist v2** here: [**Linguist v2**](http://linguistv2.azurewebsites.net).
 
-From the home page:
 1. Select your language from the sidebar
-2. Create a username
-3. Select the room you want to chat in. If no room is selected, default is lobby
-4. Start chatting!
+1. Create a username
+1. Select the room you want to chat in. If no room is selected, default is lobby
+1. Start chatting!
 
 ## Requirements
 
@@ -62,15 +61,14 @@ module.exports = config;
 
 ### Tasks
 
-gulp - Runs tests, builds public scripts, and serves site on local server port 3000, and watches for changes to files (server and public).
+1. `gulp` - Runs tests, builds public scripts, and serves site on local server port 3000, and watches for changes to files (server and public).
+1. `gulp scripts` - Builds public scripts for deployment, placing result in /public/dist
+1. `gulp test-server` - Runs server tests
+1. `gulp test-client` - Runs client tests
 
-gulp scripts - Builds public scripts for deployment, placing result in /public/dist
+## Deployment
 
-gulp test-server - Server Test
-
-gulp test-client - Client Test
-
-## Deployment (credit Marcus Phillips, Hack Reactor)
+***(credit Marcus Phillips, [Hack Reactor](http://hackreactor.com))***
 
 1. Install Azure-CLI: `npm install -g azure-cli`
 1. Connect to your Azure account
@@ -92,9 +90,11 @@ gulp test-client - Client Test
 View the project roadmap [here](https://github.com/HumpbackSeahorses/HumpbackSeahorses/issues)
 
 ## Team
-  - __Product Owners__: Jared Noble, Clark Feusier
-  - __Scrum Masters__: Dave Fedele, Eric Kennedy
-  - __Development Team Members__: Tyler Davis, Ryan Leung, Omar Alvarez
+  - __Product Owner__: Clark Feusier
+  - __Scrum Master__: Eric Kennedy
+  - __Development Team Member__: Omar Alvarez
+
+To see **Linguist v1**, please go [here](http://linguist.azurewebsites.net). Thanks to the **Linguist v1** team for inspiration: [Linguist v1](https://github.com/HumpbackSeahorses/Linguist/blob/master/README.md)
 
 ## Contributing
 
