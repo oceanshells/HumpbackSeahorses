@@ -6,6 +6,8 @@ var watch = require('gulp-watch');
 var rename = require('gulp-rename');
 var karma = require('gulp-karma');
 var mocha = require('gulp-mocha');
+var imagemin = require('gulp-imagemin');
+var pngquant = require('imagemin-pngquant');
 
 var publicDir = 'public/**/*.js';
 
@@ -24,11 +26,22 @@ gulp.task('scripts', function(){
           .pipe(gulp.dest('./public/dist/'));
 });
 
+gulp.task('images', function () {
+    return gulp.src('./public/client/img/*')
+        .pipe(imagemin({
+            progressive: true,
+            svgoPlugins: [{removeViewBox: false}],
+            use: [pngquant()]
+        }))
+        .pipe(gulp.dest('./public/client/images'));
+});
+
 gulp.task('watch-public', function(){
   gulp.watch([publicDir, '!public/dist/*.js'], ['scripts']);
 });
 
 gulp.task('develop', function(){
+  gulp.start('images');
   gulp.start('scripts');
   nodemon({
     script: './server.js',
