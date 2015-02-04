@@ -18,6 +18,7 @@ gulp.task('scripts', function(){
                    './public/client/**/*.js',
                    './public/client/app.js'])
           .pipe(concat('scripts.js'))
+          .pipe(gulp.dest('./public/dist/'))
           .pipe(rename('scripts.min.js'))
           .pipe(uglify())
           .pipe(gulp.dest('./public/dist/'));
@@ -29,7 +30,7 @@ gulp.task('watch-public', function(){
 
 gulp.task('develop', function(){
   gulp.start('scripts');
-  nodemon({ 
+  nodemon({
     script: './server.js',
     env: { 'NODE_ENV': 'development' },
     ignore: ['public/dist/']
