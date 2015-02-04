@@ -33,6 +33,7 @@ server/config.js
 
 # Emojis
 public/client/img/emojis/*.png
+public/client/images/emojis/*.png
 
 # azure configs
 iisnode.yml
