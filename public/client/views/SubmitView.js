@@ -2,17 +2,19 @@
 var SubmitView = Backbone.View.extend({
 
   events: {
-    'submit' : 'handleSubmit',
-    'change #lang' : 'changeLanguage',
-    'click #roomButton' : 'changeRoom'
+    'submit': 'handleSubmit',
+    'change #lang': 'changeLanguage',
+    'click #roomButton': 'changeRoom'
   },
 
   initialize: function(){
+    // BUG: TODO: set correct room to Lobby default -> not ''
     this.currRoom = $("#room").val();
   },
 
   handleSubmit: function(e){
     e.preventDefault();
+    // BUG: TODO: fix this logic -> no room
     if (this.currRoom === $("#room").val()) {
       this.messageSubmitter();
     } else {
@@ -42,7 +44,9 @@ var SubmitView = Backbone.View.extend({
   changeRoom : function(e){
     e.preventDefault();
     this.currRoom = $("#room").val();
+    // TODO: check if currRoom is empty!
     var lang = $('#lang').val();
     socket.emit('join room', {room: this.currRoom, lang: lang});
   }
+
 });
