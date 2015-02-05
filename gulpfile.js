@@ -33,8 +33,7 @@ gulp.task('images', function () {
       progressive: true,
       svgoPlugins: [{removeViewBox: false}],
       use: [pngquant()]
-    }))
-    .pipe(gulp.dest('./public/client/images'));
+    })).pipe(gulp.dest('./public/client/images'));
 });
 
 gulp.task('watch-public', function(){
@@ -54,7 +53,7 @@ gulp.task('develop', function(){
 gulp.task('default', ['develop']);
 
 gulp.task('test-server', function(){
-  return gulp.src(['./test/server/server.js','./test/server/integration.js' ], {read: false})
+  return gulp.src(['./test/server/server.js','./test/server/integration.js'], {read: false})
     .pipe(mocha({reporter: 'nyan'}));
 });
 
