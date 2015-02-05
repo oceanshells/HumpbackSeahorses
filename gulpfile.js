@@ -14,9 +14,9 @@ var testFiles = ['./test/client/unit.js', './test/client/integration.js'];
 
 //Backbone requires specific order for its dependencies
 gulp.task('scripts', function(){
-  return gulp.src(['./bower_components/jquery/dist/jquery.js',
-                   './bower_components/underscore/underscore.js',
-                   './bower_components/backbone/backbone.js',
+  return gulp.src(['.public/bower_components/jquery/dist/jquery.js',
+                   '.public/bower_components/underscore/underscore.js',
+                   '.public/bower_components/backbone/backbone.js',
                    './node_modules/socket.io-client/socket.io.js',
                    './public/client/**/*.js',
                    './public/client/app.js'])
