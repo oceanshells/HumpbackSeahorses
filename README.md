@@ -70,6 +70,7 @@ module.exports = config;
 1. `gulp test-server` - Runs server tests
 1. `gulp test-client` - Runs client tests
 1. `gulp seed:emojis` - Seeds database with emojis from GitHub's API, and seed `img/emojis/` with PNG emoji files
+    - **Note**: the server *must* be running when you try to seed the database &mdash; spin up another shell and run `gulp` before running `gulp seed:emojis` in your other shell thread.
 
 ## Deployment
 

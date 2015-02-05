@@ -4,6 +4,9 @@ var Emojis = Backbone.Collection.extend({
 
   model: Emoji,
 
+  // We are not using #fetch because the emojis are stored on the server
+  // differently than the client Emoji model-schema expects. So, we assemble
+  // the emojis manually instead of automatically (with #fetch).
   getFilenames: function(){
     $.ajax({
       url: this.url,
