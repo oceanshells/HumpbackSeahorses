@@ -14,13 +14,10 @@ var MessageView = Backbone.View.extend({
 
   render:function(){
     this.$el.html(this.template(this.model.attributes));
-    this.playImSound();
+    var imSnd = new Audio('client/sounds/im.wav');
+    imSnd.play();
     return this.$el;
   },
-
-  playImSound: function() {
-    window.clicksound.playclip();
-  }
 });
 
 
