@@ -61,3 +61,10 @@
   max-width: 100px;
   max-height: 100px;
 }
+.lang-badge {
+  background-color: rgb(111, 112, 186);
+  cursor: pointer;
+}
+.alt-text {
+  background-color: rgb(255, 208, 221);
+}
