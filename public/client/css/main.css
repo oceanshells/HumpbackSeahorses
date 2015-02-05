@@ -22,3 +22,42 @@
 .thumb > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
   border:2px solid #f00;
 }
+
+.ling-navbar {
+  margin-bottom: 19px;
+  min-height: 124px;
+}
+.navbar-default {
+  background-color: #2e8bcc;
+  border-color: #2e8bcc;
+  display: block;
+}
+.ling-sidenav {
+  padding: 25px;
+  text-shadow: 0 1px 0 #fff;
+  background-color: #f5f5f5;
+}
+.navbar-text {
+  color: #fff !important;
+  float: left;
+  min-height: 90px;
+  padding: 30px;
+}
+.messages-list {
+  min-height: 550px;
+}
+.ling-footer {
+  padding-top: 40px;
+  padding-bottom: 30px;
+  margin-top: 100px;
+  color: #777;
+  text-align: center;
+  border-top: 1px solid #e5e5e5;
+}
+.username-panel {
+  min-height: 100px;
+}
+.lang-globe {
+  max-width: 100px;
+  max-height: 100px;
+}
