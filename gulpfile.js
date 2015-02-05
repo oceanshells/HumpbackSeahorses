@@ -14,13 +14,17 @@ var testFiles = ['./test/client/unit.js', './test/client/integration.js'];
 
 //Backbone requires specific order for its dependencies
 gulp.task('scripts', function(){
-  return gulp.src(['./public/bower_components/jquery/dist/jquery.js',
-                   './public/bower_components/underscore/underscore.js',
-                   './public/bower_components/backbone/backbone.js',
-                   './node_modules/socket.io-client/socket.io.js',
-                   './public/client/**/*.js',
-                   './public/client/app.js'])
-    .pipe(concat('scripts.js'))
+  return gulp.src([
+    './public/bower_components/jquery/dist/jquery.js',
+    './public/bower_components/underscore/underscore.js',
+    './public/bower_components/backbone/backbone.js',
+    './node_modules/socket.io-client/socket.io.js',
+    './public/client/models/*.js',
+    './public/client/collections/*.js',
+    './public/client/views/*.js',
+    './public/client/**/*.js',
+    './public/client/app.js'
+  ]).pipe(concat('scripts.js'))
     .pipe(gulp.dest('./public/dist/'))
     .pipe(rename('scripts.min.js'))
     .pipe(uglify())
