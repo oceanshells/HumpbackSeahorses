@@ -14,13 +14,17 @@ var testFiles = ['./test/client/unit.js', './test/client/integration.js'];
 
 //Backbone requires specific order for its dependencies
 gulp.task('scripts', function(){
-  return gulp.src(['./public/bower_components/jquery/dist/jquery.js',
-                   './public/bower_components/underscore/underscore.js',
-                   './public/bower_components/backbone/backbone.js',
-                   './node_modules/socket.io-client/socket.io.js',
-                   './public/client/**/*.js',
-                   './public/client/app.js'])
-    .pipe(concat('scripts.js'))
+  return gulp.src([
+    './public/bower_components/jquery/dist/jquery.js',
+    './public/bower_components/underscore/underscore.js',
+    './public/bower_components/backbone/backbone.js',
+    './node_modules/socket.io-client/socket.io.js',
+    './public/client/models/*.js',
+    './public/client/collections/*.js',
+    './public/client/views/*.js',
+    './public/client/**/*.js',
+    './public/client/app.js'
+  ]).pipe(concat('scripts.js'))
     .pipe(gulp.dest('./public/dist/'))
     .pipe(rename('scripts.min.js'))
     .pipe(uglify())
@@ -33,8 +37,7 @@ gulp.task('images', function () {
       progressive: true,
       svgoPlugins: [{removeViewBox: false}],
       use: [pngquant()]
-    }))
-    .pipe(gulp.dest('./public/client/images'));
+    })).pipe(gulp.dest('./public/client/images'));
 });
 
 gulp.task('watch-public', function(){
@@ -54,7 +57,7 @@ gulp.task('develop', function(){
 gulp.task('default', ['develop']);
 
 gulp.task('test-server', function(){
-  return gulp.src(['./test/server/server.js','./test/server/integration.js' ], {read: false})
+  return gulp.src(['./test/server/server.js','./test/server/integration.js'], {read: false})
     .pipe(mocha({reporter: 'nyan'}));
 });
 

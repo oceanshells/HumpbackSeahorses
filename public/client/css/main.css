@@ -1,14 +1,12 @@
 .message-display {
   padding: 5px;
 }
-
 .message-display img {
   vertical-align: middle;
   border-radius: 50%;
   width: 28px;
   height: 28px;
 }
-
 .thumb > input{ /* HIDE RADIO */
   visibility: hidden; /* Makes input not-clickable */
   position: absolute; /* Remove input from document flow */
@@ -22,7 +20,6 @@
 .thumb > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
   border:2px solid #f00;
 }
-
 .ling-navbar {
   margin-bottom: 19px;
   min-height: 124px;
@@ -67,4 +64,14 @@
 }
 .alt-text {
   background-color: rgb(255, 208, 221);
+}
+.emojiKeyboardWrapper {
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 32px;
+  background-color: #006600;
+}
+.emojiKeyboardWrapper:hover {
+  cursor: pointer;
 }

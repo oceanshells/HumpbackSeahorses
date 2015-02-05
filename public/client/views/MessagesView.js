@@ -26,7 +26,7 @@ var MessagesView = Backbone.View.extend({
     if (!this.onscreenMessages[message.cid]) {
       var messageView = new MessageView ({model : message});
       this.renderUsername(message);
-      this.$el.append (messageView.render());
+      this.$el.append(messageView.render());
       this.onscreenMessages[message.cid] = true;
       $('#messagesView').scrollTop(2000);
     }
