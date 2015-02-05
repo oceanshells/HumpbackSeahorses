@@ -57,3 +57,7 @@
 .username-panel {
   min-height: 100px;
 }
+.lang-globe {
+  max-width: 100px;
+  max-height: 100px;
+}
