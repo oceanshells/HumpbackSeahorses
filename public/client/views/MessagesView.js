@@ -55,3 +55,4 @@ var MessagesView = Backbone.View.extend({
   }
 
 });
+
