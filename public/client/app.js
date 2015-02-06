@@ -4,7 +4,9 @@ var socket = io();
 var AppView = Backbone.View.extend({
 
   events: {
-    'click .emojiKeyboardWrapper': 'displayEmojiKeyboard'
+    'click #emojiKeyboardWrapper': 'displayEmojiKeyboard',
+    'click #nextPageEmojis': 'nextPage',
+    'click .emojiView .emojiImg': 'insertEmoji'
   },
 
   initialize: function(){
@@ -19,10 +21,20 @@ var AppView = Backbone.View.extend({
   render: function(){},
 
   displayEmojiKeyboard: function(e){
-    this.emojiListView = new EmojiListView({el: $('.emojiKeyboard'), collection: new Emojis()});
-    // change display of keyboard
-    // style keyboard to popup
+    e && e.preventDefault();
+    this.emojiListView = new EmojiListView({el: $('#emojiKeyboard'), collection: new Emojis()});
+    this.emojiListView.toggleKeyboard();
+  },
+
+  nextPage: function(e){
+    e && e.preventDefault();
+    this.emojiListView.turnPage();
+  },
+
+  insertEmoji: function(e){
+    this.emojiListView.insertEmoji($(e.target).attr('src'));
   }
+
 
 });
 

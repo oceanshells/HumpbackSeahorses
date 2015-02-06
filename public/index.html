@@ -78,7 +78,7 @@
                 </select>
               </li>
               <li>
-                <form action="#" id='userDetailsView'>
+                <form action="#" id='userDetailsView'></form>
               </li>
               <li>
                 <label>Current Room</label>
@@ -100,11 +100,13 @@
           <div class="panel panel-default messages-list">
             <div class="panel-body" id="messagesView"></div>
           </div>
+          <div id="emojiKeyboard" class="closed keyboard"></div>
+          <button id="nextPageEmojis" class="btn btn-default closed">Next ></button>
           <form action="#" id="submitForm">
             <div class="input-group">
-              <div class="emojiKeyboardWrapper">
-                <div class="emojiKeyboard" style="display:none;"></div>
-              </div>
+              <span id="emojiKeyboardWrapper" class="input-group-btn">
+                <button class="btn btn-default">Emojis</button>
+              </span>
               <input type="text" class="form-control" id="chatInput" placeholder="message">
                   <span class="input-group-btn">
                     <button class="btn btn-default" type="submit">Send</button>
@@ -118,8 +120,8 @@
     <footer class="ling-footer" role="contentinfo">
       <div class="container">
         <p>
-          An <a href="#">OceanShells</a> production by <a href="#">Eric Kennedy</a>, <a href="http://clarkfeusier.com" target="_blank">Clark Feusier</a>, and <a
-            href="#">Omar Alvarez</a>
+          An <a href="https://github.com/orgs/oceanshells/people" target="_blank">OceanShells</a> production by <a href="http://ekeric13.github.io/" target="_blank">Eric Kennedy</a>, <a href="http://clarkfeusier.com" target="_blank">Clark Feusier</a>, and <a
+            href="https://github.com/omarCA" target="_blank">Omar Alvarez</a>
         </p>
       </div>
     </footer>

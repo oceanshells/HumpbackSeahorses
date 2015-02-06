@@ -3,8 +3,7 @@ var EmojiView = Backbone.View.extend({
   className: 'emojiView',
 
   template : _.template(
-    '<h1><%- emojiName %></h1>' +
-    '<img src="<%- emojiFileUrl %>" />'
+    '<img class="emojiImg" src="<%- emojiFileUrl %>" />'
   ),
 
   initialize: function(){
@@ -15,5 +14,4 @@ var EmojiView = Backbone.View.extend({
     this.$el.html(this.template(this.model.attributes));
     return this.$el;
   }
-
 });
