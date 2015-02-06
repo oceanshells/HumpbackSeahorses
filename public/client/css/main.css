@@ -62,8 +62,25 @@
   background-color: rgb(111, 112, 186);
   cursor: pointer;
 }
+.text {
+  position: relative;
+}
+
 .alt-text {
-  background-color: rgb(255, 208, 221);
+  position: relative;
+  top: 10;
+  right: 0;
+  background-color: #c9d7f1;
+  -webkit-box-shadow:2px 2px 4px #9999aa;
+  -moz-box-shadow:2px 2px 4px #9999aa;
+  box-shadow:2px 2px 4px #9999aa;
+  box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  border-style: solid;
+  border-width: 5px;
+  border-color: #c9d7f1;
+  z-index: 100;
 }
 .emojiKeyboardWrapper {
   display: inline-block;

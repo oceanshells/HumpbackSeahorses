@@ -4,13 +4,15 @@ var MessageView = Backbone.View.extend({
 
   template : _.template(
     '<span>'+
-      '<img src="client/images/avatars/<%- avatar %>.png">'+ 
-      '<strong><%- username %></strong>@<%- room %> - <span style="display: none;" class="alt-text"><%- translations[lang] %></span><span class="text"><%- text %></span>'+
+      '<img src="client/images/avatars/<%- avatar %>.png">'+
+      '<strong><%- username %></strong>@<%- room %> - <span class="text"><%- text %></span> <div style="display: none;" class="alt-text"><i>Original text:</i><br> <%- translations[lang] %></div> '+
     '</span>'
     ),
 
   events: {
-    'click span.badge': 'toggleLanguage'
+    'click span.badge': 'toggleLanguage',
+    'mouseenter span.text': 'mouseToggleLanguage',
+    'mouseout span.text': 'untoggleLanguage'
   },
 
   render:function(){
@@ -24,8 +26,24 @@ var MessageView = Backbone.View.extend({
   },
 
   toggleLanguage: function(e) {
-    this.$el.find('span.text').toggle();
-    this.$el.find('span.alt-text').toggle();
+    this.$el.find('div.alt-text').toggle()
+      .css("width", +this.$el.find("span.text").css("width").slice(0, -2) + 40);
+  },
+
+  mouseToggleLanguage: function(e) {
+    if (this.model.attributes.session !== window.sessionStorage.session) {
+      var _this = this;
+      this.toggle = window.setTimeout(function(){
+         _this.$el.find('div.alt-text').toggle()
+          .css("width", +_this.$el.find("span.text").css("width").slice(0, -2) + 40);
+      }, 600);
+    }
+  },
+
+  untoggleLanguage: function(e) {
+    e && e.preventDefault;
+    window.clearTimeout(this.toggle);
+    this.$el.find('div.alt-text').css("display", "none");
   }
 });
 
