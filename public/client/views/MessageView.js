@@ -4,7 +4,6 @@ var MessageView = Backbone.View.extend({
 
   template : _.template(
     '<span>'+
-      '<span class="badge lang-badge pull-right"><span class="pull-left fa fa-globe fa-2"></span></span>'+
       '<img src="client/images/avatars/<%- avatar %>.png">'+ 
       '<strong><%- username %></strong>@<%- room %> - <span style="display: none;" class="alt-text"><%- translations[lang] %></span><span class="text"><%- text %></span>'+
     '</span>'
@@ -16,16 +15,17 @@ var MessageView = Backbone.View.extend({
 
   render:function(){
     this.$el.html(this.template(this.model.attributes));
+    if (this.model.attributes.session !== window.sessionStorage.session) {
+      this.$el.prepend('<span class="badge lang-badge pull-right"><span class="pull-left fa fa-globe fa-2"></span></span>');
+    }
     var imSnd = new Audio('client/sounds/im.wav');
     imSnd.play();
     return this.$el;
   },
 
   toggleLanguage: function(e) {
-    if (this.model.attributes.session !== window.sessionStorage.session) {
-      this.$el.find('span.text').toggle();
-      this.$el.find('span.alt-text').toggle();
-    }
+    this.$el.find('span.text').toggle();
+    this.$el.find('span.alt-text').toggle();
   }
 });
 
