@@ -5,7 +5,7 @@ var MessageView = Backbone.View.extend({
   template : _.template(
     '<span>'+
       '<img src="client/images/avatars/<%- avatar %>.png">'+
-      '<strong><%- username %></strong>@<%- room %> - <span class="text"><%- text %></span> <div style="display: none;" class="alt-text"><i>Original text:</i><br> <%- translations[lang] %></div> '+
+      '<strong><%- username %></strong>@<%- room %> - <span class="text"><%- text %></span> <div style="display: none;" class="alt-text"><%- translations[lang] %></div> '+
     '</span>'
     ),
 
@@ -27,7 +27,7 @@ var MessageView = Backbone.View.extend({
 
   toggleLanguage: function(e) {
     this.$el.find('div.alt-text').toggle()
-      .css("width", +this.$el.find("span.text").css("width").slice(0, -2) + 40);
+      .css("width", +this.$el.find("span.text").css("width").slice(0, -2) + 10);
   },
 
   mouseToggleLanguage: function(e) {
@@ -35,7 +35,7 @@ var MessageView = Backbone.View.extend({
       var _this = this;
       this.toggle = window.setTimeout(function(){
          _this.$el.find('div.alt-text').toggle()
-          .css("width", +_this.$el.find("span.text").css("width").slice(0, -2) + 40);
+          .css("width", +_this.$el.find("span.text").css("width").slice(0, -2) + 10);
       }, 600);
     }
   },
