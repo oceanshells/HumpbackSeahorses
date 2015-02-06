@@ -8,6 +8,7 @@ var AppView = Backbone.View.extend({
   },
 
   initialize: function(){
+    window.sessionStorage.session = chance.guid();
     this.messages = new Messages();
     this.submitView = new SubmitView({el: $('.submitView'), collection: this.messages});
     this.messagesView = new MessagesView({el: $('#messagesView'), collection: this.messages});

@@ -6,6 +6,7 @@ var Messages = Backbone.Collection.extend({
   //add model to collection
   addmsg: function(msg){
     this.add(new Message({
+      session: msg.session,
       username: msg.username,
       text: msg.text,
       lang: msg.lang,

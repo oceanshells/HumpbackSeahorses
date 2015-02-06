@@ -22,8 +22,10 @@ var MessageView = Backbone.View.extend({
   },
 
   toggleLanguage: function(e) {
-    this.$el.find('span.text').toggle();
-    this.$el.find('span.alt-text').toggle();
+    if (this.model.attributes.session !== window.sessionStorage.session) {
+      this.$el.find('span.text').toggle();
+      this.$el.find('span.alt-text').toggle();
+    }
   }
 });
 

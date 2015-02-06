@@ -25,6 +25,7 @@ var SubmitView = Backbone.View.extend({
 
   messageSubmitter: function(){
     var message = {
+      session: window.sessionStorage.session,
       text: $('#chatInput').val(),
       lang: $('#lang').val(),
       username: $('#username').val(),
