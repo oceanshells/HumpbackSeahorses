@@ -1,6 +1,7 @@
 var avatars = [
   {val: 'A01'}, {val: 'A02'}, {val: 'A03'}, {val: 'A04'}, {val: 'A05'}, {val: 'B01'},
-  {val: 'FA01'}, {val: 'FA02'}, {val: 'FA03'}, {val: 'FA04'}, {val: 'FA05'}, {val: 'FC01'}
+  {val: 'FA01'}, {val: 'FA02'}, {val: 'FA03'}, {val: 'FA04'}, {val: 'FA05'}, {val: 'FC01'},
+  {val: 'Bulbasaur'}, {val: 'Charmander'}, {val: 'Pikachu'}, {val: 'Squirtle'}
 ];
 
 var AvatarSelectView = Backbone.View.extend({
