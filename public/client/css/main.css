@@ -65,7 +65,6 @@
 .text {
   position: relative;
 }
-
 .alt-text {
   position: relative;
   top: 10;
@@ -82,13 +81,36 @@
   border-color: #c9d7f1;
   z-index: 100;
 }
-.emojiKeyboardWrapper {
-  display: inline-block;
-  vertical-align: middle;
-  width: 20px;
-  height: 32px;
-  background-color: #006600;
-}
-.emojiKeyboardWrapper:hover {
+/*TODO: emojiKeyboardWrapper styling*/
+#emojiKeyboardWrapper:hover {
   cursor: pointer;
+}
+/*TODO: emojiKeyboard styling*/
+.closed {
+  display: none;
+}
+#emojiKeyboard {
+  padding: 17px;
+}
+.open {
+  display: block;
+  margin: -202px 0 0 0;
+}
+.keyboard {
+  background-color: white;
+  border: 3px solid #2e8bcc;
+  width: 355px;
+  height: 250px;
+  position: relative;
+}
+.emojiView {
+  padding: 10px;
+  display: inline-block;
+}
+.emojiImg {
+  width: 24px;
+  height: 24px;
+}
+.displayBlock {
+  display: block;
 }
