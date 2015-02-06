@@ -18,6 +18,7 @@ gulp.task('scripts', function(){
     './public/bower_components/jquery/dist/jquery.js',
     './public/bower_components/underscore/underscore.js',
     './public/bower_components/backbone/backbone.js',
+    './public/bower_components/chance/chance.js',
     './node_modules/socket.io-client/socket.io.js',
     './public/client/models/*.js',
     './public/client/collections/*.js',
