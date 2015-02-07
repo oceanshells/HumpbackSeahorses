@@ -116,3 +116,23 @@
 .displayBlock {
   display: block;
 }
+.untranslate-container {
+  padding-right: 2%;
+  margin-bottom: 0;
+}
+.input-bar-fixed {
+  position: fixed;
+  bottom: 3%;
+  right: 0;
+  width: 65%;
+  padding-right: 15%;
+}
+
+@media only screen and (max-width: 1080px) {
+  .input-bar-fixed {
+    position: fixed;
+    bottom: 3%;
+    right: 0;
+    width: 75%;
+    padding-right: 25%;
+  }
