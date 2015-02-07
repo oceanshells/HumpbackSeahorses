@@ -9,7 +9,7 @@ var SubmitView = Backbone.View.extend({
 
   initialize: function(){
     // BUG: TODO: set correct room to Lobby default -> not ''
-    this.currRoom = $("#room").val();
+    this.currRoom = $("#room").val('lobby');
   },
 
   handleSubmit: function(e){
@@ -19,7 +19,10 @@ var SubmitView = Backbone.View.extend({
       this.messageSubmitter();
     } else {
       this.changeRoom(e);
-      this.messageSubmitter();
+      var _this = this;
+      window.setTimeout(
+        _this.messageSubmitter
+      , 200);
     }
   },
 
