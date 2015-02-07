@@ -38,7 +38,7 @@
   color: #fff !important;
   float: left;
   min-height: 90px;
-  padding: 30px;
+  padding-top: 35px;
 }
 .messages-list {
   min-height: 550px;
@@ -50,6 +50,8 @@
   color: #777;
   text-align: center;
   border-top: 1px solid #e5e5e5;
+  position: relative;
+  z-index: 10
 }
 .username-panel {
   min-height: 100px;
